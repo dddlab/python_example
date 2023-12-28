@@ -1,0 +1,32 @@
+{
+    "name": "Jupyter",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/jovyan/work,type=bind",
+    "workspaceFolder": "/home/jovyan/work",
+
+    "forwardPorts": [8888],
+    "overrideCommand": false,
+    //"postStartCommand": "nohup bash -c 'jupyter lab --allow-root --ip 0.0.0.0 --ServerApp.allow_origin=\"*\" &'",
+
+    //"remoteUser": "root",
+    //"runArgs": [],
+
+    "customizations": {
+
+        "vscode": {
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/conda/bin/python",
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter",
+                "ms-toolsai.jupyter-keymap",
+                "analytic-signal.preview-pdf"
+            ]
+        }
+
+    }
+}
