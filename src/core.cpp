@@ -27,6 +27,23 @@ void sthreshmat(MatrixXd & x,
 }
 
 SparseMatrix<double> accord(
+    Ref<MatrixXd, 0, Stride<Dynamic, Dynamic>> S
+    ) {
+
+    int p = S.cols();
+
+    //int num_threads = omp_get_max_threads(); // Set the number of threads
+    //omp_set_num_threads(num_threads);
+
+    SparseMatrix<double> X(p, p);     // current and next estimate
+    X.setIdentity();                            // initial guess: X = I
+
+    // #pragma omp parallel
+    
+    return X;
+}
+
+SparseMatrix<double> asdfaccord(
     Ref<MatrixXd, 0, Stride<Dynamic, Dynamic>> S, 
     Ref<MatrixXd, 0, Stride<Dynamic, Dynamic>> LambdaMat,
     double lam2,

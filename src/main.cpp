@@ -13,6 +13,10 @@ int add(int i, int j) {
 }
 
 Eigen::SparseMatrix<double> accord(
+    Eigen::Ref<Eigen::MatrixXd, 0, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>> S
+    );
+
+Eigen::SparseMatrix<double> asdfaccord(
     Eigen::Ref<Eigen::MatrixXd, 0, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>> S,
     Eigen::Ref<Eigen::MatrixXd, 0, Eigen::Stride<Eigen::Dynamic, Eigen::Dynamic>> LambdaMat,
     double lam2,

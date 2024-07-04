@@ -2,6 +2,12 @@ import _gaccord as _accord
 import numpy as np
 import pandas as pd
 
+def temp(S):
+
+    assert (type(S) == np.ndarray and S.dtype == 'float64')
+
+    _accord.accord(S, lam_mat, lam2, epstol, maxitr, tau, penalize_diag, hist_norm_diff, hist_hn)
+
 def check_symmetry(a, rtol=1e-5, atol=1e-8):
     return np.allclose(a, a.T, rtol=rtol, atol=atol)
 
